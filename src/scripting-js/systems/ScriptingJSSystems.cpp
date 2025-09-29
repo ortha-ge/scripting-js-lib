@@ -2,12 +2,10 @@ module;
 
 #include <utility>
 
-#include <entt/entt.hpp>
 #include <quickjs.h>
 
 module ScriptingJS.Systems;
 
-import Core.EnTTRegistry;
 import Core.Scheduler;
 
 namespace ScriptingJS {
@@ -16,7 +14,7 @@ namespace ScriptingJS {
 	print('Hello');
 )";
 
-	ScriptingJSSystems::ScriptingJSSystems(Core::EnTTRegistry& registry, Core::Scheduler& scheduler)
+	ScriptingJSSystems::ScriptingJSSystems(entt::registry& registry, Core::Scheduler& scheduler)
 		: mRegistry{ registry }
 		, mScheduler{ scheduler } {
 
@@ -43,17 +41,11 @@ namespace ScriptingJS {
 		JS_FreeContext(context);
 		JS_FreeRuntime(runtime);
 
-		mTickHandle = mScheduler.schedule([this]() {
-		   tick(mRegistry);
-		});
+		mTickHandle = mScheduler.schedule([this]() { tick(mRegistry); });
 	}
 
-	ScriptingJSSystems::~ScriptingJSSystems() {
-		mScheduler.unschedule(std::move(mTickHandle));
-	}
+	ScriptingJSSystems::~ScriptingJSSystems() { mScheduler.unschedule(std::move(mTickHandle)); }
 
-	void ScriptingJSSystems::tick(entt::registry& registry) {
-
-	}
+	void ScriptingJSSystems::tick(entt::registry& registry) {}
 
 } // namespace ScriptingJS

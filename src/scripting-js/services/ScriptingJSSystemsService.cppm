@@ -8,6 +8,8 @@ export import ScriptingJS.Systems;
 
 export namespace ScriptingJS {
 
-	class ScriptingJSSystemsService : public kgr::single_service<ScriptingJSSystems, kgr::dependency<Core::EnTTRegistryService, Core::SchedulerService>>{};
+	class ScriptingJSSystemsService
+		: public kgr::single_service<
+			  ScriptingJSSystems, kgr::dependency<Core::EnTTRegistryService, Core::SchedulerService>> {};
 
-} // Input
+} // namespace ScriptingJS

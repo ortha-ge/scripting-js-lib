@@ -3,11 +3,11 @@ cmake_minimum_required(VERSION 3.31)
 
 find_package(qjs CONFIG REQUIRED)
 
-set (scripting-js-lib-src
+set(scripting-js-lib-src
         src/scripting-js/systems/ScriptingJSSystems.cpp
 )
 
-set (scripting-js-lib-modules
+set(scripting-js-lib-modules
         src/scripting-js/services/ScriptingJSSystemsService.cppm
         src/scripting-js/systems/ScriptingJSSystems.cppm
 )

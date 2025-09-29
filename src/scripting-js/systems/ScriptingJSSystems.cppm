@@ -1,17 +1,13 @@
-module;
-
-#include <entt/fwd.hpp>
-
 export module ScriptingJS.Systems;
 
-import Core.EnTTRegistry;
 import Core.Scheduler;
+import entt;
 
 export namespace ScriptingJS {
 
 	class ScriptingJSSystems {
 	public:
-		ScriptingJSSystems(Core::EnTTRegistry&, Core::Scheduler&);
+		ScriptingJSSystems(entt::registry&, Core::Scheduler&);
 		~ScriptingJSSystems();
 
 		ScriptingJSSystems(ScriptingJSSystems&&) = delete;
@@ -23,7 +19,7 @@ export namespace ScriptingJS {
 		void tick(entt::registry&);
 
 	private:
-		Core::EnTTRegistry& mRegistry;
+		entt::registry& mRegistry;
 		Core::Scheduler& mScheduler;
 		Core::TaskHandle mTickHandle{};
 	};
