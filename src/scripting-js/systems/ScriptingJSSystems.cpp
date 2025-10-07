@@ -4,11 +4,11 @@ module;
 
 #include <quickjs.h>
 
-module ScriptingJS.Systems;
+module Ortha.ScriptingJS.Systems;
 
-import Core.Scheduler;
+import Ortha.Core.Scheduler;
 
-namespace ScriptingJS {
+namespace Ortha::ScriptingJS {
 
 	constexpr char TestScriptJS[] = R"(
 	print('Hello');
@@ -48,4 +48,4 @@ namespace ScriptingJS {
 
 	void ScriptingJSSystems::tick(entt::registry& registry) {}
 
-} // namespace ScriptingJS
+} // namespace Ortha::ScriptingJS

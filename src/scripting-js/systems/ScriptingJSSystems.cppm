@@ -1,9 +1,9 @@
-export module ScriptingJS.Systems;
+export module Ortha.ScriptingJS.Systems;
 
-import Core.Scheduler;
+import Ortha.Core.Scheduler;
 import entt;
 
-export namespace ScriptingJS {
+export namespace Ortha::ScriptingJS {
 
 	class ScriptingJSSystems {
 	public:
@@ -24,4 +24,4 @@ export namespace ScriptingJS {
 		Core::TaskHandle mTickHandle{};
 	};
 
-} // namespace ScriptingJS
+} // namespace Ortha::ScriptingJS
